@@ -1,4 +1,4 @@
-package com.jobrapp.androidinterview;
+package com.jobrapp.androidinterview.vm;
 
 import android.app.Application;
 

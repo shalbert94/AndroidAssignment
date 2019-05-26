@@ -1,10 +1,11 @@
-package com.jobrapp.androidinterview;
+package com.jobrapp.androidinterview.vm;
 
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.jobrapp.androidinterview.BuildConfig;
 import com.jobrapp.server.Server;
 import com.jobrapp.server.User;
 

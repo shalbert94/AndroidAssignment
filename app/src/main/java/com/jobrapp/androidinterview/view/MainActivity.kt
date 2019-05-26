@@ -1,8 +1,7 @@
-package com.jobrapp.androidinterview
+package com.jobrapp.androidinterview.view
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -10,18 +9,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.jobrapp.androidinterview.util.AutoFitGridLayoutManager
-import com.jobrapp.androidinterview.util.EndlessScrollListener
-import com.jobrapp.androidinterview.util.GridDecoration
+import com.jobrapp.androidinterview.R
+import com.jobrapp.androidinterview.view.util.AutoFitGridLayoutManager
+import com.jobrapp.androidinterview.view.util.EndlessScrollListener
+import com.jobrapp.androidinterview.view.util.GridDecoration
+import com.jobrapp.androidinterview.vm.DataRepository
+import com.jobrapp.androidinterview.vm.JobViewModel
 import com.jobrapp.server.User
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private lateinit var model: JobViewModel
-    private var jobAdapter:JobAdapter?=null;
+    private var jobAdapter: JobAdapter?=null;
     private var progressBar: ProgressBar?=null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

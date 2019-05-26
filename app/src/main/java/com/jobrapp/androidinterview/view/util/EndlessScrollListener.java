@@ -1,4 +1,4 @@
-package com.jobrapp.androidinterview.util;
+package com.jobrapp.androidinterview.view.util;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

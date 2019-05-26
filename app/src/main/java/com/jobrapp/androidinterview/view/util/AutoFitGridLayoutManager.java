@@ -1,4 +1,4 @@
-package com.jobrapp.androidinterview.util;
+package com.jobrapp.androidinterview.view.util;
 
 import android.content.Context;
 import android.util.TypedValue;

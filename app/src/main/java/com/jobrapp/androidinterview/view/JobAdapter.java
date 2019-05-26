@@ -1,4 +1,4 @@
-package com.jobrapp.androidinterview;
+package com.jobrapp.androidinterview.view;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jobrapp.androidinterview.R;
 import com.jobrapp.server.User;
 import com.squareup.picasso.Picasso;
 

@@ -1,4 +1,4 @@
-package com.jobrapp.androidinterview.util;
+package com.jobrapp.androidinterview.view.util;
 
 import android.graphics.Rect;
 import android.view.View;
