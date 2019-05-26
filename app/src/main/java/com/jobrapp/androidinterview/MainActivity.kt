@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jobrapp.androidinterview.util.AutoFitGridLayoutManager
+import com.jobrapp.androidinterview.util.EndlessScrollListener
 import com.jobrapp.androidinterview.util.GridDecoration
 import com.jobrapp.server.User
 import retrofit2.Response
@@ -35,6 +36,15 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager= layoutManager
         recyclerView.adapter=jobAdapter
         DataRepository.getInstance().loadData()
+        recyclerView.addOnScrollListener(object: EndlessScrollListener(layoutManager){
+            override fun loadBottom() {
+                DataRepository.getInstance().loadData()
+            }
+
+            override fun loadTop() {
+                TODO("not implemented")
+            }
+        })
     }
 
     fun updateUi(result:Response<List<User>>?){
