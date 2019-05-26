@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.jobrapp.androidinterview.util.AutoFitGridLayoutManager
 import com.jobrapp.server.User
 import retrofit2.Response
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         model.liveData.observe(this, dataObserver)
         jobAdapter= JobAdapter()
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
-        val layoutManager =GridLayoutManager(this, 2);
+        val layoutManager = AutoFitGridLayoutManager(this, resources.getDimensionPixelSize(R.dimen.item_width));
         layoutManager.orientation=RecyclerView.VERTICAL
         recyclerView.layoutManager= layoutManager
         recyclerView.adapter=jobAdapter
