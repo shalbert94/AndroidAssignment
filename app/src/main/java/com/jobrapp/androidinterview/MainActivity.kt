@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jobrapp.androidinterview.util.AutoFitGridLayoutManager
+import com.jobrapp.androidinterview.util.GridDecoration
 import com.jobrapp.server.User
 import retrofit2.Response
 
@@ -27,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
         val layoutManager = AutoFitGridLayoutManager(this, resources.getDimensionPixelSize(R.dimen.item_width));
         layoutManager.orientation=RecyclerView.VERTICAL
+        val space = resources.getDimension(R.dimen.space).toInt()
+        val spanCount = Math.max(1, (recyclerView.getMeasuredWidth() / resources.getDimension(R.dimen.item_width)).toInt())
+        val gridDecoration = GridDecoration(spanCount, space)
+        recyclerView.addItemDecoration(gridDecoration)
         recyclerView.layoutManager= layoutManager
         recyclerView.adapter=jobAdapter
         DataRepository.getInstance().loadData()
