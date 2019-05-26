@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
@@ -62,8 +63,8 @@ class MainActivity : AppCompatActivity() {
         if (result!!.isSuccessful){
             progressBar!!.visibility= View.GONE
             jobAdapter?.addAll(result.body())
-            Log.d("MainActivity", result.toString())
-
+        }else{
+            Toast.makeText(this, R.string.error_message, Toast.LENGTH_LONG).show()
         }
 
 
